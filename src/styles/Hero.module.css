@@ -1,0 +1,324 @@
+.heroSection {
+  width: 100%;
+  min-height: calc(100vh - 80px); /* Accounts for scroll-padding-top in global.css */
+  background-color: var(--bg-section);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevents ambient blur from creating unwanted scrollbars */
+  position: relative;
+  
+  /* Divider line separating hero section from lower content */
+  border-bottom: 1px solid rgba(130, 200, 229, 0.15);
+  box-shadow: 0 4px 20px rgba(56, 189, 248, 0.05);
+}
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; /* Centers the container inside heroSection */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Keeps both columns grouped tightly in the middle */
+  gap: 4rem; /* Controls spacing between photo and text */
+}
+
+.imageColumn {
+  position: relative;
+  flex: 0 0 auto; /* Keeps image container locked to its exact size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  isolation: isolate;
+}
+
+/* 1. Background Ambient Glow */
+.glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.85) 0%,
+    rgba(14, 165, 233, 0.55) 40%,
+    rgba(130, 200, 229, 0.2) 65%,
+    rgba(0, 0, 0, 0) 80%
+  );
+  filter: blur(40px);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulseGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+/* 2. Floating Animation Keyframes */
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-14px); /* Moves up smoothly */
+  }
+  100% {
+    transform: translateY(0px); /* Returns down smoothly */
+  }
+}
+
+/* 3. Circular Photo Frame with Layered Glow & Slow Float */
+.imageWrapper {
+  position: relative;
+  z-index: 1;
+  width: 290px;
+  height: 290px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(130, 200, 229, 0.8);
+  
+  /* Multi-layered sharp and spread outer box-shadows */
+  box-shadow: 
+    0 0 20px rgba(56, 189, 248, 0.8),
+    0 0 40px rgba(56, 189, 248, 0.5),
+    0 0 70px rgba(130, 200, 229, 0.35);
+  background-color: #0b0f17;
+  
+  /* Smooth floating continuous motion */
+  animation: floatSlow 4s ease-in-out infinite;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.imageWrapper:hover {
+  border-color: #38bdf8;
+  box-shadow: 
+    0 0 25px rgba(56, 189, 248, 1),
+    0 0 50px rgba(56, 189, 248, 0.7),
+    0 0 85px rgba(130, 200, 229, 0.5);
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 10%;
+}
+
+/* Right Content Column */
+.content {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent, #82c8e5);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent, #38bdf8);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent, #38bdf8);
+}
+
+.name {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(3.2rem, 5vw, 4.8rem);
+  color: var(--accent, #82c8e5);
+  line-height: 1.05;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.85rem;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-heading, #ffffff);
+  margin-bottom: 1.25rem;
+}
+
+.bio {
+  color: var(--text-body, #a0a0a0);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+/* Action Buttons */
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.hireBtn {
+  background-color: var(--button-surface, #38bdf8);
+  color: var(--button-foreground, #000000);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 2.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.hireBtn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.resumeBtn {
+  background-color: transparent;
+  color: var(--text-heading, #ffffff);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent, #82c8e5);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.resumeBtn:hover {
+  background-color: rgba(130, 200, 229, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Social Icons */
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  transform: translateY(-2px);
+}
+
+.mailIcon {
+  background-color: var(--accent, #82c8e5);
+  color: #000000;
+}
+
+.linkedinIcon {
+  background-color: #ffffff;
+  color: #0077b5;
+}
+
+.githubIcon {
+  background-color: transparent;
+  border: 1px solid var(--text-heading, #ffffff);
+  color: var(--text-heading, #ffffff);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 968px) {
+  .heroSection {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+    overflow: hidden;
+  }
+
+  .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .imageColumn {
+    margin-top: 2rem;
+  }
+
+  /* Scale down frame and ambient glow to prevent header overlap */
+  .imageWrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .glow {
+    width: 240px;
+    height: 240px;
+    filter: blur(20px);
+  }
+
+  /* Center all content elements properly */
+  .content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .badge {
+    justify-content: center;
+  }
+
+  .bio {
+    text-align: center;
+  }
+
+  .buttonGroup {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Fix social links overlap */
+  .socialLinks {
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mailIcon {
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonGroup {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hireBtn,
+  .resumeBtn {
+    width: 100%;
+  }
+}

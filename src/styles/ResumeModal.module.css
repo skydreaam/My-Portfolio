@@ -1,0 +1,252 @@
+/* Dark Overlay / Backdrop */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+/* Modal Window Container */
+.modalContainer {
+  width: 100%;
+  max-width: 850px;
+  max-height: 90vh;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--surface-border, #e5e7eb);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+/* Top Control Bar */
+.topBar {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--surface-border, #e5e7eb);
+  background-color: var(--bg-section, #f9fafb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading, #111827);
+}
+
+.actionGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-body, #4b5563);
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--surface-border, #d1d5db);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  color: var(--text-heading, #111827);
+  background-color: var(--bg-button-hover, #f3f4f6);
+  border-color: var(--surface-border-hover, #9ca3af);
+}
+
+.primaryBtn {
+  color: var(--bg-card, #ffffff);
+  background-color: var(--text-heading, #111827);
+  border-color: var(--text-heading, #111827);
+  font-weight: 600;
+}
+
+.primaryBtn:hover {
+  background-color: var(--accent, #0284c7);
+  border-color: var(--accent, #0284c7);
+  color: #ffffff;
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted, #6b7280);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: var(--text-heading, #111827);
+}
+
+/* Modal Inner Body (Scrollable) */
+.resumeContent {
+  padding: 2.5rem;
+  overflow-y: auto;
+  color: var(--text-body, #374151);
+  font-family: var(--font-montserrat), sans-serif;
+  background-color: var(--bg-card, #ffffff);
+}
+
+/* Custom Scrollbar */
+.resumeContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.resumeContent::-webkit-scrollbar-thumb {
+  background: var(--surface-border, #d1d5db);
+  border-radius: 3px;
+}
+
+/* Resume Document Styling */
+.headerSection {
+  margin-bottom: 2rem;
+}
+
+.candidateName {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-heading, #111827);
+  letter-spacing: -0.5px;
+  margin: 0 0 0.25rem 0;
+}
+
+.candidateRole {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin: 0 0 0.75rem 0;
+}
+
+.contactMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Resume Sections */
+.sectionBlock {
+  margin-bottom: 1.75rem;
+}
+
+.sectionTitle {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted, #6b7280);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--surface-border, #e5e7eb);
+  margin: 0 0 0.85rem 0;
+}
+
+.summaryText {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--text-body, #4b5563);
+  margin: 0;
+}
+
+/* Technical Skills Grid */
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem 1.5rem;
+  font-size: 0.78rem;
+}
+
+.skillCategory span {
+  color: var(--text-heading, #111827);
+  font-weight: 600;
+}
+
+.skillCategory {
+  color: var(--text-body, #4b5563);
+}
+
+/* Experience & Education Item Header */
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.itemTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-heading, #111827);
+}
+
+.itemDate {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Bullet Points */
+.bulletList {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.78rem;
+  color: var(--text-body, #4b5563);
+  line-height: 1.6;
+}
+
+.bulletList li {
+  margin-bottom: 0.35rem;
+}
+
+/* Honors Highlight */
+.honorsBadge {
+  font-size: 0.78rem;
+  color: var(--text-body, #374151);
+  line-height: 1.5;
+}
+
+/* Mobile responsive fixes */
+@media (max-width: 640px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  .actionGroup span {
+    display: none; /* Hide button text on narrow mobile screens */
+  }
+  .resumeContent {
+    padding: 1.5rem;
+  }
+}

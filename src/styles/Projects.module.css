@@ -1,0 +1,242 @@
+/* Section Container - Max width keeps everything framed neutrally */
+.projectsSection {
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--bg-section);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 100vw var(--bg-section);
+  clip-path: inset(0 -100vw 0 -100vw);
+}
+
+/* Header Spacing */
+.projectsHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 1.75rem;
+}
+
+.sectionBadge {
+  display: inline-block;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-strong);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+.title {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 0.15rem;
+  line-height: 1;
+}
+
+.subtitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-body);
+}
+
+/* Grid Layout - 2 Columns with moderate gap */
+.projectsGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+/* Neutral Card Styling */
+.card {
+  background-color: var(--bg-card-alt);
+  border: 1px solid var(--surface-border);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(130, 200, 229, 0.4);
+  box-shadow: 0 8px 20px var(--surface-shadow);
+}
+
+/* Image Container */
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9; /* Shorter image height gives text room to breathe */
+  background-color: var(--bg-image);
+  overflow: hidden;
+}
+
+.projectNumber {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.projectImage {
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.card:hover .projectImage {
+  transform: scale(1.03);
+}
+
+/* Card Content - Compact & Balanced Padding */
+.cardContent {
+  padding: 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.4rem;
+}
+
+.description {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-muted, #d0d0d0);
+  margin-bottom: 1.25rem;
+  display: block;
+  overflow: visible;
+}
+
+/* Card Footer */
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--surface-border);
+  padding-top: 0.65rem;
+  margin-top: auto;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.techTag {
+  background-color: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  border-radius: 6px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.viewLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #38bdf8;
+  text-decoration: none;
+  padding: 2px;
+  transition: transform 0.2s ease;
+}
+
+.viewLink:hover {
+  transform: translate(2px, -2px);
+}
+
+/* Carousel Indicators Base (Desktop) */
+.carouselIndicators {
+  display: none;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 680px) {
+  /* 1. Turn Grid into a horizontal swipe track */
+  .projectsGrid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1.25rem;
+    padding: 0.5rem 1rem 1.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .projectsGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. Style each project card to snap neatly into place */
+  .projectsGrid > * {
+    flex: 0 0 80%;
+    scroll-snap-align: center;
+  }
+
+  .projectsSection {
+    padding: 2rem 0;
+  }
+
+  .imageContainer {
+    aspect-ratio: 14 / 6;
+  }
+
+  /* 3. Display carousel indicators */
+  .carouselIndicators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .indicatorDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+  }
+
+  .activeIndicatorDot {
+    width: 20px;
+    border-radius: 12px;
+    background-color: var(--button-surface, #38bdf8);
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+  }
+}
