@@ -28,13 +28,11 @@ export default function Hero() {
             <div className={styles.glow} />
 
             <Image 
-              src="/images/profile.jpg" 
+              src="/images/profile.JPG" 
               alt="Kariel Coleen Mauzar"
               width={400} 
-              height={600} 
-              quality={75}        
-              priority
-              sizes="(max-width: 768px) 280px, 340px"
+              height={400} 
+              unoptimized={true} /* This is the crucial fix */
               className={styles.profileImg}
             />
           </motion.div>
