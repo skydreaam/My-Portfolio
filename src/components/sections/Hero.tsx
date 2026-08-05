@@ -30,8 +30,8 @@ export default function Hero() {
             <Image 
               src="/images/profile.jpg" 
               alt="Kariel Coleen Mauzar"
-              width={4200} 
-              height={6300} 
+              width={400} 
+              height={600} 
               quality={75}        
               priority
               sizes="(max-width: 768px) 280px, 340px"
