@@ -8,6 +8,7 @@ import Projects from '@/components/sections/Project';
 import Skills from '@/components/sections/Skills';
 import Experience from '@/components/sections/Experience';
 import Certifications from '@/components/sections/Certifications';
+import Contact from '@/components/sections/Contact';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,6 +31,7 @@ export default function Home() {
         <Skills />
         <Experience />
         <Certifications />
+        <Contact />
       </main>
     </>
   );

@@ -33,8 +33,8 @@ const skillCategories = [
       { name: 'PYTHON', icon: FaPython, color: '#3776AB' },
       { name: 'JAVASCRIPT', icon: FaJs, color: '#F7DF1E' },
       { name: 'PHP', icon: FaPhp, color: '#777BB4' },
-      { name: 'SQL', icon: FaDatabase, color: '#003B57' },
-      { name: 'JAVA', icon: FaJava, color: '#007396' },
+      { name: 'SQL', icon: FaDatabase, color: 'var(--text-heading)' }, // Adaptive Theme Color
+      { name: 'JAVA', icon: FaJava, color: '#E51F24' },
       { name: 'C++', icon: SiCplusplus, color: '#00599C' },
     ],
   },
@@ -43,7 +43,7 @@ const skillCategories = [
     description: 'Modern web stacks, mobile, and UI systems',
     categoryIcon: FaLayerGroup,
     skills: [
-      { name: 'NEXT.JS', icon: SiNextdotjs, color: '#FFFFFF' },
+      { name: 'NEXT.JS', icon: SiNextdotjs, color: 'var(--text-heading)' }, // Adaptive Theme Color
       { name: 'REACT.JS', icon: FaReact, color: '#61DAFB' },
       { name: 'LARAVEL', icon: FaLaravel, color: '#FF2D20' },
       { name: 'FLUTTER', icon: FaFlutter, color: '#02569B' },
@@ -74,7 +74,7 @@ const skillCategories = [
     description: 'Interface design and visual asset creation',
     categoryIcon: FaPalette,
     skills: [
-      { name: 'FIGMA', icon: FaFigma, color: '#F24E1E' },
+      { name: 'FIGMA', icon: FaFigma, color: '#EA4C89' },
       { name: 'CANVA', icon: SiCanvas, color: '#00C4CC' },
     ],
   },
@@ -83,7 +83,7 @@ const skillCategories = [
     description: 'Daily tools and version control systems',
     categoryIcon: FaWrench,
     skills: [
-      { name: 'GITHUB', icon: FaGithub, color: '#FFFFFF' },
+      { name: 'GITHUB', icon: FaGithub, color: 'var(--text-heading)' }, // Adaptive Theme Color
     ],
   },
 ];

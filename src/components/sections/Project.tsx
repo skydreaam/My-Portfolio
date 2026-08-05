@@ -74,14 +74,11 @@ export default function Projects() {
         whileInView="visible"
         viewport={{ once: false, amount: 0.3 }}
       >
-        <motion.span className={styles.sectionBadge} variants={textRise}>
-          FEATURED PROJECTS
-        </motion.span>
         <motion.h2 className={styles.title} variants={textRise}>
           PROJECTS
         </motion.h2>
         <motion.p className={styles.subtitle} variants={textRise}>
-          my recent works and UI designs
+          My recent works and UI designs
         </motion.p>
       </motion.div>
 

@@ -41,7 +41,7 @@
 
 .subtitle {
   font-family: var(--font-montserrat), sans-serif;
-  font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
   color: var(--text-body, #888888);
   margin-top: 0.5rem;
 }
@@ -49,11 +49,15 @@
 /* Responsive Grid */
 .cardsGrid {
   width: 100%;
+  max-width: 1050px; /* Constrains 3 cards so they don't stretch too wide */
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr); /* Changed from 4 to 3 */
   gap: 1.5rem;
   align-items: stretch;
 }
+
+
 
 /* Individual Certification Card */
 .certCard {
@@ -232,7 +236,7 @@
 @media (max-width: 1024px) {
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    max-width: 700px; /* Keeps 2 cards cleanly centered on tablets */
   }
 }
 

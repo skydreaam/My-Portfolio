@@ -47,18 +47,6 @@ const certificates = [
     ],
     credentialUrl: '#',
   },
-  {
-    title: 'Database Foundations & SQL',
-    issuer: 'Oracle',
-    date: '2024',
-    tags: ['SQL', 'MySQL', 'Database'],
-    highlights: [
-      'Relational database design & normalization',
-      'Complex query optimization and joins',
-      'Database security best practices',
-    ],
-    credentialUrl: '#',
-  },
 ];
 
 export default function Certifications() {

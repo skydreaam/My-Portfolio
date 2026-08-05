@@ -33,7 +33,6 @@ const education = [
 export default function Experience() {
   return (
     <section id="experience" className={styles.sectionContainer}>
-      {/* Inner Container to enforce max-width consistency */}
       <div className={styles.experienceContainer}>
         {/* Header */}
         <motion.div
@@ -43,12 +42,13 @@ export default function Experience() {
           whileInView="visible"
           viewport={{ once: false, amount: 0.4 }}
         >
-          <motion.span className={styles.badge} variants={textRise}>
-            MY JOURNEY
-          </motion.span>
           <motion.h2 className={styles.mainTitle} variants={textRise}>
             EXPERIENCE & EDUCATION
           </motion.h2>
+          {/* Renamed class here to prevent clash with column subtitles */}
+          <motion.p className={styles.mainSubtitle} variants={textRise}>
+            My professional journey and academic background
+          </motion.p>
         </motion.div>
 
         {/* Grid Container */}

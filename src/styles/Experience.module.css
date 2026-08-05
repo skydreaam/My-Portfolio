@@ -1,4 +1,4 @@
-/* Full-bleed Section Container (Matches Skills section structure) */
+/* Full-bleed Section Container */
 .sectionContainer {
   width: 100%;
   padding: 2rem 1.5rem 4rem 1.5rem;
@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-/* Inner Centered Container - Maximized to match Skills max-width */
+/* Inner Centered Container */
 .experienceContainer {
   width: 100%;
   max-width: 1250px;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 
-/* Centered Header */
+/* Main Section Header */
 .mainHeader {
   display: flex;
   flex-direction: column;
@@ -45,6 +45,14 @@
   line-height: 1.1;
 }
 
+/* Distinct Main Section Subtitle */
+.mainSubtitle {
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  color: var(--text-body, #888888);
+  margin-top: 0.5rem;
+} 
+
 /* 2-Column Responsive Grid */
 .gridWrapper {
   display: grid;
@@ -54,7 +62,7 @@
   align-items: stretch;
 }
 
-/* Outer Container Box for Each Column */
+/* Outer Box for Column */
 .columnBox {
   background-color: var(--bg-card, #0c0d0e);
   border: 1px solid var(--surface-border, #1f2226);
@@ -88,6 +96,7 @@
   margin: 0 0 0.25rem 0;
 }
 
+/* Column Header Subtitle */
 .subtitle {
   font-family: var(--font-montserrat), sans-serif;
   font-size: 0.775rem;
@@ -105,7 +114,6 @@
   flex: 1;
 }
 
-/* Vertical Timeline Track Line */
 .timeline::before {
   content: '';
   position: absolute;
@@ -123,7 +131,6 @@
   padding-left: 1.5rem;
 }
 
-/* Custom Bullet Dot */
 .dot {
   position: absolute;
   left: 1px;
@@ -143,7 +150,6 @@
   box-shadow: 0 0 0 2px var(--accent, #82c8e5), 0 0 10px rgba(130, 200, 229, 0.4);
 }
 
-/* Timeline Sub-Cards */
 .card {
   width: 100%;
   background-color: var(--bg-card-alt, #121417);

@@ -284,15 +284,51 @@
   }
 
   .badge {
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    color: var(--accent, #82c8e5);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent, #38bdf8);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent, #38bdf8);
+  }
+
+  .name {
+    font-family: var(--font-bebas), sans-serif;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+    color: var(--accent, #82c8e5);
+    line-height: 1;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.85rem;
+  }
+
+  .tagline {
+    font-size: 0.90rem;
+    font-weight: 600;
+    color: var(--text-heading, #ffffff);
+    margin-bottom: 1.25rem;
   }
 
   .bio {
+    color: var(--text-body, #a0a0a0);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
     text-align: center;
   }
 
   .buttonGroup {
-    width: 100%;
+    width: 50%;
     justify-content: center;
   }
 
