@@ -35,17 +35,26 @@ const certificates = [
     credentialUrl: 'https://www.credly.com/badges/e3c78a93-4ac9-4de3-950e-1b0715ba7c4b/public_url',
   },
   {
-    title: 'Basic of Microsoft Power BI',
-    issuer: 'UniAthena',
-    date: '2026',
-    image: '/images/cert-powerbi.jpg',
-    tags: ['Power BI', 'Data Analysis'],
+    title: 'AI Fluency Framework & Foundations',
+    issuer: 'Anthropic',
+    date: 'Aug 2026',
+    image: '/images/ai-fluency.png',
+    tags: ['AI Fluency', 'AI Literacy', 'AI Awareness'],
     highlights: [
-      'Foundational course to understand the major building blocks of Power BI',
-      'Connecting data sources and constructing interactive dashboards',
-      'Basic DAX modeling and visual data storytelling',
+      'Understanding the AI Fluency Framework and its application in various industries',
     ],
-    credentialUrl: '#',
+    credentialUrl: 'https://verify.skilljar.com/c/xqpdzsrm47p5',
+  },
+  {
+    title: 'Python Developer Associate',
+    issuer: 'DataCamp',
+    date: 'Sep 2026',
+    image: '/images/datacamp.png',
+    tags: ['Python Programming', 'Data Science', 'Software Development'],
+    highlights: [
+      'Proficiency in Python programming for data analysis and software development',
+    ],
+    credentialUrl: 'https://www.datacamp.com/certificate/PDEVA0011681228292',
   },
 ];
 

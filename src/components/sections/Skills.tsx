@@ -5,7 +5,8 @@ import {
   FaPython, FaJava, FaPhp, FaJs, FaLaravel, FaReact, FaFlutter, FaDatabase, FaFigma, FaGithub, FaCode, FaLayerGroup, FaServer, FaChartPie, FaPalette, FaWrench
 } from 'react-icons/fa6';
 import { 
-  SiCplusplus, SiNextdotjs, SiMysql, SiFirebase, SiGooglecolab, SiLooker, SiCanvas, SiTailwindcss
+  SiCplusplus, SiNextdotjs, SiMysql, SiFirebase, SiGooglecolab, SiLooker, SiCanvas, SiTailwindcss,
+  SiTypescript, SiVite, SiNodedotjs, SiPrisma, SiPostgresql, SiNginx, SiHostinger, SiGit
 } from 'react-icons/si';
 import styles from '../../styles/Skills.module.css';
 import { staggerChildren, textRise } from '../animations/variants';
@@ -32,6 +33,7 @@ const skillCategories = [
     skills: [
       { name: 'PYTHON', icon: FaPython, color: '#3776AB' },
       { name: 'JAVASCRIPT', icon: FaJs, color: '#F7DF1E' },
+      { name: 'TYPESCRIPT', icon: SiTypescript, color: '#3178C6' },
       { name: 'PHP', icon: FaPhp, color: '#777BB4' },
       { name: 'SQL', icon: FaDatabase, color: 'var(--text-heading)' }, // Adaptive Theme Color
       { name: 'JAVA', icon: FaJava, color: '#E51F24' },
@@ -39,12 +41,13 @@ const skillCategories = [
     ],
   },
   {
-    title: 'Frameworks',
+    title: 'Frameworks & Libraries',
     description: 'Modern web stacks, mobile, and UI systems',
     categoryIcon: FaLayerGroup,
     skills: [
       { name: 'NEXT.JS', icon: SiNextdotjs, color: 'var(--text-heading)' }, // Adaptive Theme Color
       { name: 'REACT.JS', icon: FaReact, color: '#61DAFB' },
+      { name: 'REACT NATIVE', icon: FaReact, color: '#61DAFB' },
       { name: 'LARAVEL', icon: FaLaravel, color: '#FF2D20' },
       { name: 'FLUTTER', icon: FaFlutter, color: '#02569B' },
       { name: 'TAILWIND', icon: SiTailwindcss, color: '#06B6D4' },
@@ -52,10 +55,15 @@ const skillCategories = [
   },
   {
     title: 'Database & Backend',
-    description: 'Data persistence and backend fundamentals',
+    description: 'Relational data, APIs, and real-time communication',
     categoryIcon: FaServer,
     skills: [
       { name: 'MYSQL', icon: SiMysql, color: '#4479A1' },
+      { name: 'POSTGRESQL', icon: SiPostgresql, color: '#4169E1' },
+      { name: 'PRISMA ORM', icon: SiPrisma, color: 'var(--text-heading)' },
+      { name: 'NODE.JS', icon: SiNodedotjs, color: '#5FA04E' },
+      { name: 'REST API', icon: FaServer, color: '#38BDF8' },
+      { name: 'WEBSOCKET', icon: FaServer, color: '#82C8E5' },
       { name: 'FIREBASE', icon: SiFirebase, color: '#FFCA28' },
     ],
   },
@@ -80,10 +88,16 @@ const skillCategories = [
   },
   {
     title: 'Tools & DevOps',
-    description: 'Daily tools and version control systems',
+    description: 'Build tools, version control, and VPS deployment',
     categoryIcon: FaWrench,
     skills: [
       { name: 'GITHUB', icon: FaGithub, color: 'var(--text-heading)' }, // Adaptive Theme Color
+      { name: 'GIT', icon: SiGit, color: '#F05032' },
+      { name: 'VITE', icon: SiVite, color: '#646CFF' },
+      { name: 'NGINX', icon: SiNginx, color: '#009639' },
+      { name: 'HOSTINGER VPS', icon: SiHostinger, color: '#A78BFA' },
+      { name: 'PHPUNIT', icon: FaCode, color: '#777BB4' },
+      { name: 'PLAYWRIGHT', icon: FaCode, color: '#45BA4B' },
     ],
   },
 ];

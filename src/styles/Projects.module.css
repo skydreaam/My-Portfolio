@@ -103,6 +103,23 @@
   transition: transform 0.35s ease;
 }
 
+.projectPlaceholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: radial-gradient(ellipse at center, rgba(56, 189, 248, 0.15), transparent 75%);
+  color: var(--accent);
+  font-family: var(--font-montserrat), sans-serif;
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-weight: 600;
+  text-align: center;
+}
+
 .card:hover .projectImage {
   transform: scale(1.03);
 }

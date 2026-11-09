@@ -49,10 +49,10 @@
 /* Responsive Grid */
 .cardsGrid {
   width: 100%;
-  max-width: 1050px; /* Constrains 3 cards so they don't stretch too wide */
+  max-width: 1250px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Changed from 4 to 3 */
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.5rem;
   align-items: stretch;
 }

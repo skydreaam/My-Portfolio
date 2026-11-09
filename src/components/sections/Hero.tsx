@@ -51,14 +51,11 @@ export default function Hero() {
 
             <motion.h1 className={styles.name} variants={textRise}>KARIEL COLEEN MAUZAR</motion.h1>
             <motion.h2 className={styles.tagline} variants={textRise}>
-              Software Developer | Front-end Web Developer | UI/UX | Business Analytics
+              Full-Stack Developer | Business Analytics | Software Engineer
             </motion.h2>
             
             <motion.p className={styles.bio} variants={textRise}>
-              Turning ideas into responsive and user-friendly web applications. 
-              I'm an Information Technology graduate specializing in Business Analytics, 
-              passionate about software development, continuous learning, 
-              and creating digital solutions that make a difference.
+              I'm an Information Technology graduate specializing in Business Analytics, with hands-on experience in full-stack web development, software testing, and database management. I build responsive, user-friendly applications that solve real business problems, from POS and management systems to analytics dashboards. I'm passionate about writing reliable code, exploring new technologies, and continuously improving as a developer.
             </motion.p>
 
             {/* Action Buttons */}
@@ -68,6 +65,13 @@ export default function Hero() {
                 whileHover="hover" 
                 whileTap="tap" 
                 className={styles.hireBtn}
+                onClick={() => {
+                  document.getElementById('contact-message')?.focus({ preventScroll: true });
+                  document.getElementById('contact')?.scrollIntoView({
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+                    block: 'start',
+                  });
+                }}
               >
                 Hire Me
               </motion.button>
@@ -120,7 +124,7 @@ export default function Hero() {
       <ResumeModal 
         isOpen={isResumeOpen} 
         onClose={() => setIsResumeOpen(false)} 
-        pdfUrl="/files/Kariel Coleen Mauzar - Resume.pdf" 
+        pdfUrl="/files/Kariel-Resume (1).pdf" 
       />
     </>
   );

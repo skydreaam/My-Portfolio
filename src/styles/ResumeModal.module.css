@@ -204,18 +204,27 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
   margin-bottom: 0.5rem;
 }
 
 .itemTitle {
+  margin: 0;
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--text-heading, #111827);
 }
 
 .itemDate {
+  white-space: nowrap;
   font-size: 0.75rem;
   color: var(--text-muted, #6b7280);
+}
+
+.contactMeta a {
+  color: inherit;
+  overflow-wrap: anywhere;
 }
 
 /* Bullet Points */

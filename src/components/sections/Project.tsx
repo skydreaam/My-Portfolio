@@ -3,11 +3,21 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Fuel } from 'lucide-react';
 import styles from '../../styles/Projects.module.css';
 import { staggerChildren, textRise } from '../animations/variants';
 
-const projectsData = [
+type Project = {
+  id: number;
+  num: string;
+  title: string;
+  image?: string;
+  liveUrl?: string;
+  description: string;
+  tags: string[];
+};
+
+const projectsData: Project[] = [
   {
     id: 1,
     num: '01',
@@ -38,9 +48,26 @@ const projectsData = [
       'Full-stack food ordering platform complete with menu customization, cart workflow, and automated order tracking.',
     tags: ['Laravel', 'React', 'MySQL'],
   },
-  {
+   {
     id: 4,
     num: '04',
+    title: 'CJG Gasoline Management System',
+    description:
+      'A Centralized Gas Station Management and Loyalty System. This project is currently under development.',
+    image: '/images/project5.png',
+    tags: [
+      'React',
+      'TypeScript',
+      'Vite',
+      'Node.js',
+      'Prisma ORM',
+      'PostgreSQL',
+      'Nginx',
+    ],
+  },
+  {
+    id: 5,
+    num: '05',
     title: 'HCI Mobile App Prototype',
     image: '/images/project4.png',
     liveUrl: 'https://hci-app-df46c.firebaseapp.com/',
@@ -97,7 +124,7 @@ export default function Projects() {
             {/* Image Frame */}
             <div className={styles.imageContainer}>
               <span className={styles.projectNumber}>{project.num}</span>
-              <Image
+              {project.image ? <Image
                 src={project.image}
                 alt={project.title}
                 fill
@@ -107,7 +134,12 @@ export default function Projects() {
                   const target = e.target as HTMLImageElement;
                   target.style.display = 'none';
                 }}
-              />
+              /> : (
+                <div className={styles.projectPlaceholder}>
+                  <Fuel size={56} strokeWidth={1.5} aria-hidden="true" />
+                  <span>Gasoline Management System</span>
+                </div>
+              )}
             </div>
 
             {/* Content Area */}
@@ -118,7 +150,7 @@ export default function Projects() {
               </div>
 
               {/* Card Footer with Tech Stack Pills & View Live Link */}
-              <div className={styles.cardFooter}>
+              {(project.tags.length > 0 || project.liveUrl) && <div className={styles.cardFooter}>
                 <div className={styles.tagList}>
                   {project.tags.map((tag, idx) => (
                     <span key={idx} className={styles.techTag}>
@@ -127,7 +159,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <a
+                {project.liveUrl && <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -135,8 +167,8 @@ export default function Projects() {
                   aria-label={`View live site for ${project.title}`}
                 >
                   <ArrowUpRight size={18} />
-                </a>
-              </div>
+                </a>}
+              </div>}
             </div>
           </motion.div>
         ))}
