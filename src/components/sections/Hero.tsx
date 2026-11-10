@@ -55,7 +55,7 @@ export default function Hero() {
             </motion.h2>
             
             <motion.p className={styles.bio} variants={textRise}>
-              I'm an Information Technology graduate specializing in Business Analytics, with hands-on experience in full-stack web development, software testing, and database management. I build responsive, user-friendly applications that solve real business problems, from POS and management systems to analytics dashboards. I'm passionate about writing reliable code, exploring new technologies, and continuously improving as a developer.
+              I'm an Information Technology graduate specializing in Business Analytics, with hands-on experience in full-stack web development, software testing, and database management. I build responsive, user-friendly applications that solve real business problems, from POS and management systems to analytics dashboards. I'm passionate about writing reliable code, exploring new technologies, and continuously improving as a developer. 
             </motion.p>
 
             {/* Action Buttons */}
